@@ -1,32 +1,35 @@
-# Modelos Angular
+# Modelos genéricos Angular
 
-Pantallas básicas para copiar y pegar en un proyecto nuevo de Angular.
-No es un proyecto que se ejecute solo: cada carpeta es un modelo suelto.
+Pantallas básicas para copiar y pegar en proyectos nuevos.
+El repo es un proyecto Angular que se ejecuta, así cada modelo se prueba antes de copiarlo.
+
+## Ver los modelos
+
+```
+npm install
+npm start
+```
+
+Abrir http://localhost:4200
 
 ## Qué hay
 
-| Carpeta | Qué tiene |
+| Dónde | Qué es |
 |---|---|
-| `estilos/` | `variables.css` (colores) y `formulario.css` (recuadro y campos) |
-| `validadores/` | `contrasenaSegura` y `clavesIguales` |
-| `login/` | Login con formulario reactivo y validaciones |
-| `registro/` | Registro con repetir contraseña |
-| `rutas-ejemplo.ts` | Cómo quedan las rutas con las dos pantallas |
+| `src/app/pages/login/` | Login con formulario reactivo y validaciones |
+| `src/app/pages/registro/` | Registro con repetir contraseña |
+| `src/app/pages/validadores/` | `contrasenaSegura` y `clavesIguales` |
+| `src/styles.css` | Variables de color + recuadro y campos |
+| `src/app/app.routes.ts` | Rutas de ejemplo |
 
-## Cómo usarlo en un proyecto nuevo
+## Copiar un modelo a otro proyecto
 
 1. `ng new nombre-proyecto` (CSS, sin SSR)
 2. En `src/app/app.html` dejar solo `<router-outlet />`
-3. Pegar `estilos/variables.css` y abajo `estilos/formulario.css` en `src/styles.css`
-4. Crear los componentes:
-   ```
-   ng g c pages/login
-   ng g c pages/registro
-   ```
-5. Reemplazar el `.ts`, `.html` y `.css` de cada uno por los de este repo
-6. Copiar la carpeta `validadores/` a `src/app/pages/validadores/`
-   (si va en otro lado, cambiar el `import` de `registro.ts`)
-7. Armar `src/app/app.routes.ts` como en `rutas-ejemplo.ts`
+3. Copiar `src/styles.css` de acá al proyecto nuevo
+4. Copiar las carpetas que hagan falta de `src/app/pages/` a `src/app/pages/` del proyecto nuevo
+   (registro necesita también `validadores/`)
+5. Agregar las rutas en `src/app/app.routes.ts` como en este repo
 
 ## Cambiar los colores
 
@@ -37,6 +40,9 @@ En `src/styles.css`, cambiar solo estas dos:
 --fondo: #eef2f7;
 ```
 
-## Pendiente agregar
+## Agregar un modelo nuevo
 
-- más modelos
+1. `ng g c pages/nombre-del-modelo`
+2. Agregar su ruta en `src/app/app.routes.ts`
+3. Probarlo con `npm start`
+4. Anotarlo en la tabla de arriba

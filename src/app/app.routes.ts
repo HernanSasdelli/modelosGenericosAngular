@@ -1,4 +1,3 @@
-// ejemplo de src/app/app.routes.ts con login y registro
 import { Routes } from '@angular/router';
 import { Login } from './pages/login/login';
 import { Registro } from './pages/registro/registro';
