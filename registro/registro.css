@@ -1,0 +1,9 @@
+/* nombre y apellido uno al lado del otro */
+.fila {
+  display: flex;
+  gap: 12px;
+}
+
+.fila label {
+  flex: 1;
+}

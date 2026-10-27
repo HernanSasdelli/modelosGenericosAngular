@@ -1,0 +1,73 @@
+/* pegar abajo de variables.css, en src/styles.css */
+/* estilos del recuadro y los campos, los usan login y registro */
+
+.pantalla {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.recuadro {
+  width: 100%;
+  max-width: 420px;
+  background: var(--recuadro);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recuadro h1 {
+  margin: 0;
+  text-align: center;
+  color: var(--principal);
+}
+
+.recuadro label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.recuadro input {
+  padding: 10px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.recuadro input:focus {
+  outline: 2px solid var(--principal);
+  border-color: transparent;
+}
+
+.recuadro button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: var(--principal);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.recuadro a {
+  color: var(--principal);
+}
+
+.recuadro p {
+  margin: 0;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.error {
+  color: var(--error);
+  font-size: 12px;
+}

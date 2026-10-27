@@ -1,0 +1,11 @@
+// ejemplo de src/app/app.routes.ts con login y registro
+import { Routes } from '@angular/router';
+import { Login } from './pages/login/login';
+import { Registro } from './pages/registro/registro';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: Login },
+  { path: 'registro', component: Registro },
+  { path: '**', redirectTo: 'login' },
+];

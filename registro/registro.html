@@ -1,0 +1,62 @@
+<section class="pantalla">
+  <form class="recuadro" [formGroup]="form" (ngSubmit)="registrarme()">
+    <h1>Crear cuenta</h1>
+
+    <div class="fila">
+      <label>
+        Nombre
+        <input type="text" formControlName="nombre" />
+        @if (form.controls.nombre.touched && form.controls.nombre.invalid) {
+          <small class="error">Completá tu nombre</small>
+        }
+      </label>
+
+      <label>
+        Apellido
+        <input type="text" formControlName="apellido" />
+        @if (form.controls.apellido.touched && form.controls.apellido.invalid) {
+          <small class="error">Completá tu apellido</small>
+        }
+      </label>
+    </div>
+
+    <label>
+      Correo
+      <input type="email" formControlName="correo" />
+    </label>
+    @if (form.controls.correo.touched && form.controls.correo.hasError('required')) {
+      <small class="error">Completá tu correo</small>
+    }
+    @if (form.controls.correo.touched && form.controls.correo.hasError('email')) {
+      <small class="error">El correo no es válido</small>
+    }
+
+    <label>
+      Nombre de usuario
+      <input type="text" formControlName="usuario" />
+    </label>
+    @if (form.controls.usuario.touched && form.controls.usuario.invalid) {
+      <small class="error">Mínimo 3 caracteres</small>
+    }
+
+    <label>
+      Contraseña
+      <input type="password" formControlName="contrasena" />
+    </label>
+    @if (form.controls.contrasena.touched && form.controls.contrasena.invalid) {
+      <small class="error">Mínimo 8 caracteres, una mayúscula y un número</small>
+    }
+
+    <label>
+      Repetir contraseña
+      <input type="password" formControlName="repetir" />
+    </label>
+    @if (form.controls.repetir.touched && form.hasError('clavesIguales')) {
+      <small class="error">Las contraseñas no coinciden</small>
+    }
+
+    <button type="submit">Crear cuenta</button>
+
+    <p>¿Ya tenés cuenta? <a routerLink="/login">Ingresá</a></p>
+  </form>
+</section>

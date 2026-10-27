@@ -1,0 +1,25 @@
+<section class="pantalla">
+  <form class="recuadro" [formGroup]="form" (ngSubmit)="ingresar()">
+    <h1>Ingresar</h1>
+
+    <label>
+      Correo o nombre de usuario
+      <input type="text" formControlName="usuario" />
+    </label>
+    @if (form.controls.usuario.touched && form.controls.usuario.invalid) {
+      <small class="error">Completá este campo</small>
+    }
+
+    <label>
+      Contraseña
+      <input type="password" formControlName="contrasena" />
+    </label>
+    @if (form.controls.contrasena.touched && form.controls.contrasena.invalid) {
+      <small class="error">Completá este campo</small>
+    }
+
+    <button type="submit">Ingresar</button>
+
+    <p>¿No tenés cuenta? <a routerLink="/registro">Registrate</a></p>
+  </form>
+</section>
